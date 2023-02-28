@@ -1,4 +1,4 @@
-package step03.exma06;
+package step03.exam06;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
