@@ -3,6 +3,8 @@ package step04.exam06;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Set;
 
 //5597 과제안내신분
 public class Main {
@@ -10,29 +12,23 @@ public class Main {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     // 학생 명부
-    int[] studentsList = new int[10];
+    Set<Integer> students = new HashSet<>();
 
-    int count = studentsList.length; // 사람수 (변수화)
-
-    for (int i = 0; i < count; i++) {
-      studentsList[i] = i + 1;
+    // 학생 명부에 1~30까지 넣기
+    for (int i = 1; i <= 30; i++) {
+      students.add(i);
     }
 
-    // 제출 한 학생 제거
-    for (int i = 0; i < count; i++) {
-      int studentsNum = Integer.parseInt(br.readLine());
-      if (studentsNum == studentsList[i]) {
-        for (int j = i; j < count - 1; j++) {
-          studentsList[j] = studentsList[j + 1];
-        } // 삭제 의미
-        count--;
-        break;
-      }
+    // 입력받은 값 삭제하기 (제출한 학생 삭제)
+    for (int i = 1; i <= 28; i++) {
+      int num = Integer.parseInt(br.readLine());
+      students.remove(num);
     }
 
-    // for (int i = 0; i < studentsList.length; i++) {
-    // System.out.print(studentsList[i] + " ");
-    // }
+    // 제출하지 않은 학생 출력
+    for (int element : students) {
+      System.out.println(element);
+    }
 
   }
 }
