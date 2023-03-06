@@ -3,32 +3,30 @@ package step04.exam04;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.ArrayList;
+import java.util.List;
 
-//10810 공넣기
+//2562 최대값
 public class Main {
-  public static void main(String[] args) throws IOException {
-
+  public static void main(String[] args) throws NumberFormatException, IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    StringTokenizer st = new StringTokenizer(br.readLine());
-    int N = Integer.parseInt(st.nextToken(" ")); // 바구니 갯수
-    int M = Integer.parseInt(st.nextToken(" ")); // 공 넣을 횟수
-    int[] baskets = new int[N]; // 바구니를 배열로 만듦.
 
-    for (int a = 0; a < M; a++) { // 공 넣는 횟수
-      st = new StringTokenizer(br.readLine());
-      int i = Integer.parseInt(st.nextToken());
-      int j = Integer.parseInt(st.nextToken());
-      int k = Integer.parseInt(st.nextToken());
+    List<Integer> arr = new ArrayList<>();
 
-      while (i - 1 <= j - 1) { // N번째 바구니까지 숫자 넣을 반복분
-        baskets[i - 1] = k;
-        i++;
+    for (int i = 0; i < 9; i++) {
+      arr.add(i, Integer.parseInt(br.readLine()));
+    }
+
+    int max = arr.get(0);
+
+    for (int i = 0; i < arr.size(); i++) {
+      if (max < arr.get(i)) {
+        max = arr.get(i);
       }
     }
 
-    for (int a = 0; a < N; a++) {
-      System.out.print(baskets[a] + " ");
-    }
+    System.out.println(max);
+    System.out.println(arr.indexOf(max) + 1);
+
   }
 }
