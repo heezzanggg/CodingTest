@@ -7,21 +7,20 @@ import java.io.InputStreamReader;
 //10809 알파벳찾기
 public class Main {
   public static void main(String[] args) throws IOException {
+    String S = "abcdefghijklmnopqrstuvwxyz";
+
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    // String[] alphabet = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k",
-    // "l", "m", "n", "o", "p", "q", "r", "s",
-    // "t", "u", "v", "w", "x", "y", "z" };
-    String alphabet = "abcdefghijklmnopqrstuvwxyz";
+    String str = br.readLine();
 
-    String S = br.readLine(); // baekjoon
-
-    for (int i = 0; i < alphabet.length(); i++) {
-      if (S.equals(alphabet.equals(S))) {
-        System.out.println(alphabet.indexOf(alphabet));
+    for (int i = 0; i < S.length(); i++) {
+      String element = String.valueOf(S.charAt(i));
+      if (str.contains(element)) {
+        System.out.print(str.indexOf(element) + " ");
       } else {
-        System.out.println("-1");
+        System.out.print("-1" + " ");
       }
     }
 
   }
 }
+// 1 0 -1 -1 2 -1 -1 -1 -1 4 3 -1 -1 7 5 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
