@@ -16,10 +16,6 @@ public class Main {
     // 성적 입력받아서 arrSungjuks 넣는 메소드
     inputSungjuks();
 
-    // for (int i = 0; i < arrSungjuks.length; i++) {
-    // System.out.println(arrSungjuks[i].toString());
-    // }
-
     // 전공평점을 구하는 계산기 메소드
     calculator();
 
